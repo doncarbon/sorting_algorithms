@@ -14,12 +14,13 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	for (iter = (*list)->next; iter != NULL; iter = tmp)
+	for (index = (*list)->next; index != NULL; index = tmp)
 	{
 		temp = index->next;
 		insertnode = index->prev;
 		while (insertnode != NULL && index->n < insertnode->n)
 		{
+			insertnode->next = index->next	
 			print_list((const listint_t *)*list);
 		}
 	}
