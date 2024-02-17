@@ -1,4 +1,0 @@
-Swapping 2 nodes:
-
-lowla : insertnode = index-prev
-tanya : index = (*list)->next
