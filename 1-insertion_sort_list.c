@@ -20,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 		insertnode = index->prev;
 		while (insertnode != NULL && index->n < insertnode->n)
 		{
-			insertnode->next = index->next	
+			insertnode->next = index->next;	
 			print_list((const listint_t *)*list);
 		}
 	}
