@@ -8,8 +8,28 @@
  * 
  * Return: the pivot to iterate between elements of the array.
 */
-int partition(int *array, size_t low, size_t high)
+size_t partition(int *array, size_t low, size_t high)
 {
+	size_t i = 0, pivot = array[low], left = low;
+	int temp;
+
+	i = low + 1;
+	while (i <= high)
+	{
+		if (array[i] < pivot)
+		{
+			temp = array[i];
+			array[i] = array[left];
+			array[left] = temp;
+			left++;
+		}
+		i++;
+	}
+	temp = pivot;
+	pivot = array[left];
+	array[left] = pivot;
+
+	return (left);
 	
 }
 
