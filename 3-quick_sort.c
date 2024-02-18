@@ -10,7 +10,9 @@
 */
 size_t partition(int *array, size_t low, size_t high)
 {
-	size_t i = 0, pivot = array[low], left = low;
+	size_t i = 0;
+	int pivot = array[low];
+	size_t left = low;
 	int temp;
 
 	i = low + 1;
@@ -44,5 +46,13 @@ size_t partition(int *array, size_t low, size_t high)
 */
 void quick_sort(int *array, size_t size)
 {
-	
+	size_t low = (size + 1) - size, high = size - 1;
+	size_t pivot;
+
+	if (low < high)
+	{
+		pivot = partition(array, low, high);
+		quick_sort(array, pivot);
+		quick_sort(array, high);
+	}
 }
