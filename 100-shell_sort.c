@@ -6,7 +6,7 @@
  *
  * @array: array to sort.
  * @size: size of the array to sort.
- * 
+ *
  * Return: Nothing (void)
 */
 void shell_sort(int *array, size_t size)
@@ -15,8 +15,8 @@ void shell_sort(int *array, size_t size)
 	int temp;
 
 	while (gap < size / 3)
-        gap = gap * 3 + 1;
-	
+		gap = gap * 3 + 1;
+
 	while (gap > 0)
 	{
 		for (i = gap; i < size; i++)
