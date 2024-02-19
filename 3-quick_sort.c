@@ -5,7 +5,8 @@
  * @array: the array needed to be sorted.
  * @low: the first element of the array.
  * @high: the last element of the array.
- * 
+ * @size: the size of the array.
+ *
  * Return: the pivot to iterate between elements of the array.
 */
 size_t partition(int *array, size_t low, size_t high, size_t size)
@@ -38,7 +39,7 @@ size_t partition(int *array, size_t low, size_t high, size_t size)
 }
 
 /**
- * quick_sort_recursive - helper function for recursive quick sort.
+ * quick_sort_recursion - helper function for recursive quick sort.
  *
  * @array: the array to sort.
  * @low: the low index.
@@ -56,7 +57,7 @@ void quick_sort_recursion(int *array, size_t low, size_t high, size_t size)
 		pivot = partition(array, low, high, size);
 		if (pivot != 0)
 			quick_sort_recursion(array, low, pivot - 1, size);
-		
+
 		quick_sort_recursion(array, pivot + 1, high, size);
 	}
 }
@@ -72,9 +73,8 @@ void quick_sort_recursion(int *array, size_t low, size_t high, size_t size)
 */
 void quick_sort(int *array, size_t size)
 {
-
 	if (array == NULL || size < 2)
-        return;
+		return;
 
 	quick_sort_recursion(array, 0, size - 1, size);
 }
